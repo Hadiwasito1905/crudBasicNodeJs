@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HERO LIST</title>
+</head>
+<body>
+<h1><%= heroes.title %></h1>
+<table>
+    <tr>
+        <th>id</th>
+        <th>nama</th>
+        <th>role</th>
+        <th>action</th>
+    </tr>
+    <% for(let i = 0; i < heroes.data.length; i++) { %>
+        <tr>
+            <td><%= heroes.data[i].id %></td>
+            <td><%= heroes.data[i].name %></td>
+            <td><%= heroes.data[i].role %></td>
+            <td><a href="/hero/<%= heroes.data[i].id %>">Edit</a></td>
+            <td>
+                <form action="/hero/remove" method="post">
+                    <input
+                            type="text"
+                            hidden
+                            name="id"
+                            value="<%= heroes.data[i].id %>"
+                    />
+                    <input
+                            type="submit"
+                            value="X"
+                            style="border: none; background: none"
+                    />
+                </form>
+            </td>
+        </tr>
+    <% } %>
+</table>
+
+<br />
+<br />
+<br />
+
+<p>Tambah Data Hero</p>
+<form action="/hero/add" method="post">
+    <span>Nama hero</span>
+    <input type="text" name="name" placeholder="Isi nama hero" />
+    <br />
+    <span>Role hero</span>
+    <input type="text" name="role" placeholder="Isi role" />
+    <br />
+    <br />
+    <input type="submit" value="tambahkan" />
+</form>
+</body>
+</html>
