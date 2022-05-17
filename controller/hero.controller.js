@@ -6,6 +6,10 @@ router.get("/", (request, response) => {
     Hero.getHero(response);
 });
 
+router.get("/heroSkill", (request, response) => {
+    Hero.getHeroDetail(response);
+});
+
 router.get("/:id", (request, response) => {
     const id = request.params.id;
     Hero.getHeroById(id, response);

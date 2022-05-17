@@ -1,10 +1,11 @@
 const db = require("../config");
+const {response} = require("express");
 
 exports.getHero = (response) => {
     //query data
     const sql = "SELECT * FROM `hero_ml`";
 
-    //execute data
+        //execute data
     db.query(sql, (error, result) => {
         if (error) return console.log("error: ", error);
 
@@ -14,6 +15,24 @@ exports.getHero = (response) => {
             data: JSON.parse(JSON.stringify(result)),
         };
         response.render("index", { heroes });
+        response.end();
+    });
+};
+
+exports.getHeroDetail = (response) => {
+    //query data
+    const sql = "SELECT 'hero_ml.name, hero_skill.skill_1, hero_skill.skill_2, hero_skill.skill_3, hero_skill.pasif_skill' FROM hero_skill JOIN hero_ml ON (hero_ml.id = hero_skill.hero_id);"
+
+    //execute data
+    db.query(sql, (error, result) => {
+        if (error) return console.log("error: ", error);
+
+        //response data
+        const skill = {
+            title: "MOBILE LEGEND HERO SKILL",
+            data: JSON.parse(JSON.stringify(result)),
+        };
+        response.render("heroSkill", {skill});
         response.end();
     });
 };
