@@ -10,7 +10,7 @@ exports.getHero = (response) => {
 
         //response data
         const heroes = {
-            title: "MOBILE-LEGEND-HERO-LIST",
+            title: "MOBILE LEGEND HERO LIST",
             data: JSON.parse(JSON.stringify(result)),
         };
         response.render("index", { heroes });

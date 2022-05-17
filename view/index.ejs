@@ -1,81 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-          rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-          crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
     <title>HERO LIST</title>
-</head>
-<body>
-<h1><%= heroes.title %></h1>
-<table>
-    <tr>
-        <th>id</th>
-        <th>nama</th>
-        <th>role</th>
-        <th>action</th>
-    </tr>
-    <% for(let i = 0; i < heroes.data.length; i++) { %>
-        <tr>
-            <td><%= heroes.data[i].id %></td>
-            <td><%= heroes.data[i].name %></td>
-            <td><%= heroes.data[i].role %></td>
-            <td><a href="/hero/<%= heroes.data[i].id %>">Edit</a></td>
-            <td>
-                <form action="/hero/remove" method="post">
+  </head>
+  <body>
+    <div class="container">
+    <h1 align="center"><%= heroes.title %></h1>
+    
+      <table class="table table-striped table-hover">
+          <thead>
+
+              <tr>
+                <th scope="col">id</th>
+                <th scope="col">nama</th>
+                <th scope="col">role</th>
+                <th scope="col">action</th>
+              </tr>
+          </thead>
+          <tbody>
+
+              <% for(let i = 0; i < heroes.data.length; i++) { %>
+              <tr>
+                <td><%= heroes.data[i].id %></td>
+                <td><%= heroes.data[i].name %></td>
+                <td><%= heroes.data[i].role %></td>
+                <td><a href="/hero/<%= heroes.data[i].id %>">Edit</a></td>
+                <td>
+                  <form action="/hero/remove" method="post">
                     <input
-                            type="text"
-                            hidden
-                            name="id"
-                            value="<%= heroes.data[i].id %>"
+                      type="text"
+                      hidden
+                      name="id"
+                      value="<%= heroes.data[i].id %>"
                     />
                     <input
-                            type="submit"
-                            value="X"
-                            style="border: none; background: none"
+                      type="submit"
+                      value="X"
+                      style="border: none; background: none"
+                      onclick="konfirmasi()"
                     />
-                </form>
-            </td>
-        </tr>
-    <% } %>
-</table>
+                  </form>
+                </td>
+              </tr>
+              <% } %>
+          </tbody>
+      </table>
+    </div>
 
-<br />
-<br />
-<br />
+    <br />
+    <br />
+    <br />
 
-<!-- Tambah Hero -->
+    <!-- Tambah Hero -->
+    <div class="container">
+    <p>Tambah Data Hero</p>
+    <!--<form action="/hero/add" method="post">-->
+    <!--    <span>Nama hero</span>-->
+    <!--    <input type="text" name="name" placeholder="Isi nama hero" />-->
+    <!--    <br />-->
+    <!--    <span>Role hero</span>-->
+    <!--    <input type="text" name="role" placeholder="Isi role" />-->
+    <!--    <br />-->
+    <!--    <br />-->
+    <!--    <input type="submit" value="tambahkan" />-->
+    <!--</form>-->
+    <br />
 
-<p>Tambah Data Hero</p>
-<!--<form action="/hero/add" method="post">-->
-<!--    <span>Nama hero</span>-->
-<!--    <input type="text" name="name" placeholder="Isi nama hero" />-->
-<!--    <br />-->
-<!--    <span>Role hero</span>-->
-<!--    <input type="text" name="role" placeholder="Isi role" />-->
-<!--    <br />-->
-<!--    <br />-->
-<!--    <input type="submit" value="tambahkan" />-->
-<!--</form>-->
-<br />
-<form class="row g-3" action="/hero/add" method="post">
-    <div class="row">
+    <form class="row g-3" action="/hero/add" method="post">
+      <div class="row">
         <div class="col-2">
-            <input type="text" name="name" class="form-control" placeholder="Isi nama hero" aria-label="Isi nama hero">
+          <input
+            type="text"
+            name="name"
+            class="form-control"
+            placeholder="Isi nama hero"
+            aria-label="Isi nama hero"
+          />
         </div>
         <br />
         <br />
         <div class="col-2">
-            <input type="text" name="role" class="form-control" placeholder="Isi role hero" aria-label="isi role hero">
+          <input
+            type="text"
+            name="role"
+            class="form-control"
+            placeholder="Isi role hero"
+            aria-label="isi role hero"
+          />
         </div>
-    </div>
-    <div class="col-auto">
-        <button type="submit" class="btn btn-primary mb-3" value="tambahkan">Tambahkan Hero</button>
-    </div>
-</form>
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3" value="tambahkan" onclick="konfirmasi()">
+          Tambahkan Hero
+        </button>
+      </div>
+    </form>
+</div>
 
-</body>
+<!-- script alert -->
+<script>
+  function konfirmasi(){
+     var tanya = confirm("Apakah Anda Yakin ?");
+
+     if(tanya === true) {
+        pesan = "Ya";
+     }else{
+        pesan = "Tidak";
+     }
+
+     document.getElementById("pesan").innerHTML = pesan;
+  }
+</script>
+
+  </body>
 </html>
