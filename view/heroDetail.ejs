@@ -13,12 +13,12 @@
     <input type="text" hidden name="id" value="<%= hero.data[0].id %>" />
     <input type="text" name="name" value="<%= hero.data[0].name %>" />
     <input type="text" name="role" value="<%= hero.data[0].role %>" />
-    <input type="submit" value="update" onclick="konfirmasi()" />
+    <input type="submit" value="update" onclick="konfirmasi1()" />
 </form>
 
 <!-- script alert -->
 <script>
-    function konfirmasi(){
+    function konfirmasi1(){
        var tanya = confirm("Apakah Anda Yakin ?");
   
        if(tanya === true) {
