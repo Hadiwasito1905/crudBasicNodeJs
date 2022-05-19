@@ -21,9 +21,9 @@
 
               <tr>
                 <th scope="col">No.</th>
-                <th scope="col">nama</th>
-                <th scope="col">role</th>
-                <th scope="col">action</th>
+                <th scope="col">Nama</th>
+                <th scope="col">Role</th>
+                <th scope="col">Action</th>
               </tr>
           </thead>
           <tbody>
@@ -35,9 +35,9 @@
                 <td><%= heroes.data[i].name %></td>
                 <td><%= heroes.data[i].role %></td>
                 <td><a href="/hero/<%= heroes.data[i].id %>">Edit</a></td>
-                <td><a href="/heroSkill/>">Skill</a></td>
+
                 <td>
-                  <form  action="/hero/remove" method="post">
+                  <form  method="post" action="/hero/remove" onclick="hapus()">
                     <input
                       type="text"
                       hidden
@@ -48,7 +48,6 @@
                       type="submit"
                       value="X"
                       style="border: none; background: none"
-                      onclick="konfirmasi()"
                     />
                   </form>
                 </td>
@@ -56,6 +55,8 @@
               <% } %>
           </tbody>
       </table>
+
+      <p><a href="/hero/skill">List Skill Hero</a></p>
     </div>
 
     <br />
@@ -101,7 +102,7 @@
         </div>
       </div>
       <div class="col-auto">
-        <button type="submit" class="btn btn-primary mb-3" value="tambahkan">
+        <button type="submit" class="btn btn-primary mb-3" value="tambahkan" onclick="konfirmasi()">
           Tambahkan Hero
         </button>
       </div>
@@ -120,6 +121,17 @@
      }
 
      document.getElementById("pesan").innerHTML = pesan;
+  }
+  function hapus(){
+    var tanya = confirm("Apakah Anda Yakin ?");
+    if (tanya === false){
+      pesan = "Ya";
+      onclick(action="/hero/remove");
+      }else{
+      pesan ="Tidak";
+
+    }
+    document.getElementById("pesan").innerHTML = pesan;
   }
 </script>
 

@@ -2,11 +2,14 @@ const express = require("express");
 const router = express.Router();
 const Hero = require("../model/Hero.model");
 
+
 router.get("/", (request, response) => {
     Hero.getHero(response);
 });
 
-router.get("/heroSkill", (request, response) => {
+router.get("/skill", (request, response) => {
+    // console.log("contoh bambang")
+    // response.send("/Oke bambang")
     Hero.getHeroDetail(response);
 });
 
