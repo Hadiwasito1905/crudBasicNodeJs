@@ -34,10 +34,14 @@
                 <td><%= i+1 %></td>
                 <td><%= heroes.data[i].name %></td>
                 <td><%= heroes.data[i].role %></td>
-                <td><a href="/hero/<%= heroes.data[i].id %>">Edit</a></td>
-
+<!--                <td><a href="/hero/<%= heroes.data[i].id %>">Edit</a></td>-->
                 <td>
-                  <form  method="post" action="/hero/remove" onclick="hapus()">
+                    <button type="button" class="btn btn-warning" data-toggle="modal" >
+                      <a href="/hero/<%= heroes.data[i].id %>">Edit</a>
+                    </button>
+                </td>
+                <td>
+                  <form  method="post" action="/hero/remove" onclick=alert("Yakin-hapus-?")>
                     <input
                       type="text"
                       hidden
@@ -114,7 +118,7 @@
   function konfirmasi(){
      var tanya = confirm("Apakah Anda Yakin ?");
 
-     if(tanya === true) {
+     if(tanya == true) {
         pesan = "Ya";
      }else{
         pesan = "Tidak";
@@ -122,16 +126,10 @@
 
      document.getElementById("pesan").innerHTML = pesan;
   }
-  function hapus(){
-    var tanya = confirm("Apakah Anda Yakin ?");
-    if (tanya === false){
-      pesan = "Ya";
-      onclick(action="/hero/remove");
-      }else{
-      pesan ="Tidak";
 
-    }
-    document.getElementById("pesan").innerHTML = pesan;
+  function hapus(){
+    confirm("Apakah Anda Yakin ?");
+
   }
 </script>
 
