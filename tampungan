@@ -1,0 +1,49 @@
+    <form action="/hero/add" method="post">
+        <span>Nama hero</span>
+        <input type="text" name="name" placeholder="Isi nama hero" />
+        <br />
+        <span>Role hero</span>
+        <input type="text" name="role" placeholder="Isi role" />
+        <br />
+        <br />
+        <input type="submit" value="tambahkan" />
+    </form>
+
+
+    <!--      // function myFunction() {-->
+    <!--      //   let name = document.getElementById("name").value = "";-->
+    <!--      //   let name2 = document.getElementById("name2").value = "";-->
+    <!--      //-->
+    <!--      //   console.log(name)-->
+    <!--      //   console.log(name2)-->
+    <!--      //-->
+    <!--      //   if (name === "" ){-->
+    <!--      //       return alert("Nama tidak boleh kosong!!")-->
+    <!--      //     }-->
+    <!--      //-->
+    <!--      //   if (name2 === "" ){-->
+    <!--      //     return alert("Role tidak boleh kosong!!")-->
+    <!--      //   }-->
+
+
+    <!--        $('#submit').click(function(){-->
+    <!--          if($.trim($('#name').val()) == ''){-->
+    <!--            alert('Nama tidak boleh kosong');-->
+    <!--          }-->
+    <!--          if($.trim($('#name2').val()) == ''){-->
+    <!--            alert('Role tidak boleh kosong');-->
+    <!--          }-->
+    <!--        });-->
+
+
+
+    <!--      }-->
+        <!--      onSubmit="return confirm('Are you sure you wish to Insert?')"-->
+
+
+        // const skill = {
+        //     title: "MOBILE LEGEND HERO SKILL",
+        //     data: JSON.parse(JSON.stringify(result)),
+        // };
+        // response.render("heroSkill", {skill});
+        // response.end();

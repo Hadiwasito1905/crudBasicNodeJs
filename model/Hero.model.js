@@ -38,14 +38,6 @@ exports.getHeroDetail = (response) => {
 
         response.render('heroSkill', { skill })
         response.end()
-
-
-        // const skill = {
-        //     title: "MOBILE LEGEND HERO SKILL",
-        //     data: JSON.parse(JSON.stringify(result)),
-        // };
-        // response.render("heroSkill", {skill});
-        // response.end();
     });
 };
 
