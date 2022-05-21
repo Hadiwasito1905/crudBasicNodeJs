@@ -19,12 +19,9 @@ exports.getHero = (response) => {
     });
 };
 
-exports.getHeroDetail = (response) => {
+exports.getHeroDetail = (id, response) => {
     //query data
-    const sql = "SELECT *\n" +
-        "FROM hero_ml\n" +
-        "INNER JOIN hero_skill\n" +
-        "ON hero_ml.id = hero_skill.hero_id;"
+    const sql = `SELECT * FROM hero_ml WHERE id=${id}`;
 
     //execute data
     db.query(sql, (error, result) => {
@@ -36,7 +33,7 @@ exports.getHeroDetail = (response) => {
             data: JSON.parse(JSON.stringify(result))
         }
 
-        response.render('heroSkill', { skill })
+        response.render("heroSkill", { skill })
         response.end()
     });
 };
@@ -62,8 +59,13 @@ exports.updateHeroById = (data, response) => {
     const id = data.id;
     const name = data.name;
     const role = data.role;
+    const sk1 = data.skill1;
+    const sk2 = data.skill2;
+    const sk3 = data.skill3;
+    const ps = data.pasifSkill;
 
-    const sql = `UPDATE hero_ml SET name='${name}', role='${role}' WHERE id=${id}`;
+
+    const sql = `UPDATE hero_ml SET name='${name}', role='${role}', skill_1='${sk1}',skill_2='${sk2}', skill_3='${sk3}',pasif_skill='${ps}' WHERE id=${id}`;
 
     db.query(sql, (error, result) => {
         if (error) return console.log("error: ", error);

@@ -47,3 +47,40 @@
         // };
         // response.render("heroSkill", {skill});
         // response.end();
+
+
+                          <form  method="post" action="/hero/remove" onclick="return confirm('Yakin mau dihapus bang?');">
+                            <input
+                              type="text"
+                              hidden
+                              name="id"
+                              value="<%= heroes.data[i].id %>"
+                            />
+                            <input
+                              type="submit"
+                              value="X"
+                              style="border: none; background: none"
+                            />
+                          </form>
+
+
+
+                                          <td>
+                                              <button type="button" class="btn btn-warning" data-toggle="modal" >
+                                                <a href="/hero/<%= heroes.data[i].id %>">Edit</a>
+                                              </button>
+                                          </td>
+
+
+     const sql = "SELECT *\n" +
+             "FROM hero_ml\n" +
+             "INNER JOIN hero_skill\n" +
+             "ON hero_ml.id = hero_skill.hero_id;"
+
+
+
+             <!--                <td><a href="/hero/<%= heroes.data[i].id %>">Edit</a></td>-->
+
+             <!-- <td><%= heroes.data[i].id %></td> -->
+
+                   <p><a href="/hero/skill">List Skill Hero</a></p>

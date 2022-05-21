@@ -4,18 +4,41 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HERO DETAIL</title>
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+            crossorigin="anonymous"
+    />
+    <title>HERO UPDATE</title>
 </head>
 <body>
-<h1><%= hero.title %></h1>
 
-<form action="/hero/update" method="post" >
-    <input type="text" hidden name="id" value="<%= hero.data[0].id %>" />
-    <input type="text" name="name" value="<%= hero.data[0].name %>" />
-    <input type="text" name="role" value="<%= hero.data[0].role %>" />
-    <input type="submit" value="update" onclick="return confirm('Yakin mau diupdate bang?');" />
-</form>
+<h1 align="center" class="swal2-container"><%= hero.title %></h1>
 
+<div class="container">
+    <div class="fw-bold text-start">
+        <form action="/hero/update" method="post" >
+
+            <input type="text" hidden name="id" value="<%= hero.data[0].id %>" />
+            <br><br>
+            <input type="text" name="name" value="<%= hero.data[0].name %>" > Nama Hero </input>
+            <br><br>
+            <input type="text" name="role" value="<%= hero.data[0].role %>" > Role Hero </input>
+            <br><br>
+            <input type="text" name="sk1" value="<%= hero.data[0].skill_1 %>" > Skill 1 </input>
+            <br><br>
+            <input type="text" name="sk2" value="<%= hero.data[0].skill_2 %>" > Skill 2 </input>
+            <br><br>
+            <input type="text" name="sk3" value="<%= hero.data[0].skill_3 %>" > Skill 3 </input>
+            <br><br>
+            <input type="text" name="ps" value="<%= hero.data[0].pasif_skill %>" > Skill Pasif </input>
+            <br><br>
+            <input type="submit" class="btn btn-success" value="update" onclick="return confirm('Yakin mau diupdate bang?');" />
+            <br><br>
+        </form>
+    </div>
+</div>
 
 </body>
 </html>
