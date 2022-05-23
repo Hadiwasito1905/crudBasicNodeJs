@@ -28,12 +28,12 @@ exports.getHeroDetail = (id, response) => {
         if (error) return console.log("error: ", error);
 
         // response data
-        const skill= {
+        const heroes= {
             title: "MOBILE LEGEND HERO SKILL",
             data: JSON.parse(JSON.stringify(result))
         }
 
-        response.render("heroSkill", { skill })
+        response.render("heroSkill", { heroes })
         response.end()
     });
 };
@@ -59,10 +59,10 @@ exports.updateHeroById = (data, response) => {
     const id = data.id;
     const name = data.name;
     const role = data.role;
-    const sk1 = data.skill1;
-    const sk2 = data.skill2;
-    const sk3 = data.skill3;
-    const ps = data.pasifSkill;
+    const sk1 = data.sk1;
+    const sk2 = data.sk2;
+    const sk3 = data.sk3;
+    const ps = data.ps;
 
 
     const sql = `UPDATE hero_ml SET name='${name}', role='${role}', skill_1='${sk1}',skill_2='${sk2}', skill_3='${sk3}',pasif_skill='${ps}' WHERE id=${id}`;

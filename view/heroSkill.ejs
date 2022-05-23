@@ -17,7 +17,7 @@
 
 <!-- Hero Skill Table -->
 <div class="container">
-<h1 align="center"><%= skill.title %></h1>
+<h1 align="center"><%= heroes.title %></h1>
 </div>
 <br />
 <br />
@@ -31,14 +31,14 @@
             <th scope="col">Skill-3</th>
             <th scope="col">Pasif-Skill</th>
         </tr>
-        <% for (let i=  0; i<skill.data.length;i++) { %>
+        <% for (let i=  0; i<heroes.data.length;i++) { %>
             <tr>
                 <td><%= i+1 %></td>
-                <td><%= skill.data[i].name %></td>
-                <td><%= skill.data[i].skill_1 %></td>
-                <td><%= skill.data[i].skill_2 %></td>
-                <td><%= skill.data[i].skill_3 %></td>
-                <td><%= skill.data[i].pasif_skill %></td>
+                <td><%= heroes.data[i].name %></td>
+                <td><%= heroes.data[i].skill_1 %></td>
+                <td><%= heroes.data[i].skill_2 %></td>
+                <td><%= heroes.data[i].skill_3 %></td>
+                <td><%= heroes.data[i].pasif_skill %></td>
             </tr>
         <% } %>
     </table>

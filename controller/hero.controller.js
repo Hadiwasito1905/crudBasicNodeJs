@@ -22,10 +22,10 @@ router.post("/update", (request, response) => {
         id: request.body.id,
         name: request.body.name,
         role: request.body.role,
-        sk1: request.body.skill1,
-        sk2: request.body.skill2,
-        sk3: request.body.skill3,
-        ps: request.body.pasifSkill
+        sk1: request.body.skill_1,
+        sk2: request.body.skill_2,
+        sk3: request.body.skill_3,
+        ps: request.body.pasif_skill
     };
 
     Hero.updateHeroById(data, response);
