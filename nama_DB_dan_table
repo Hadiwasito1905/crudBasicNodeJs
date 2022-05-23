@@ -1,0 +1,9 @@
+DB : mobile_legend
+Table : hero_ml
+column : 1. ID
+         2. name
+         3. role
+         4. skill_1
+         5. skill_2
+         6. skill_3
+         7. pasif_skill
