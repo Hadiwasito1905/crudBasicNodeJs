@@ -1,4 +1,4 @@
-    <form action="/hero/add" method="post">
+    <!-- <form action="/hero/add" method="post">
         <span>Nama hero</span>
         <input type="text" name="name" placeholder="Isi nama hero" />
         <br />
@@ -7,7 +7,7 @@
         <br />
         <br />
         <input type="submit" value="tambahkan" />
-    </form>
+    </form> -->
 
 
     <!--      // function myFunction() {-->
@@ -41,15 +41,15 @@
         <!--      onSubmit="return confirm('Are you sure you wish to Insert?')"-->
 
 
-        // const skill = {
+        <!-- // const skill = {
         //     title: "MOBILE LEGEND HERO SKILL",
         //     data: JSON.parse(JSON.stringify(result)),
         // };
         // response.render("heroSkill", {skill});
-        // response.end();
+        // response.end(); -->
 
 
-                          <form  method="post" action="/hero/remove" onclick="return confirm('Yakin mau dihapus bang?');">
+                          <!-- <form  method="post" action="/hero/remove" onclick="return confirm('Yakin mau dihapus bang?');">
                             <input
                               type="text"
                               hidden
@@ -61,26 +61,26 @@
                               value="X"
                               style="border: none; background: none"
                             />
-                          </form>
+                          </form> -->
 
 
 
-                                          <td>
+                                          <!-- <td>
                                               <button type="button" class="btn btn-warning" data-toggle="modal" >
                                                 <a href="/hero/<%= heroes.data[i].id %>">Edit</a>
                                               </button>
-                                          </td>
+                                          </td> -->
 
-
+<!-- 
      const sql = "SELECT *\n" +
              "FROM hero_ml\n" +
              "INNER JOIN hero_skill\n" +
-             "ON hero_ml.id = hero_skill.hero_id;"
+             "ON hero_ml.id = hero_skill.hero_id;" -->
 
 
 
              <!--                <td><a href="/hero/<%= heroes.data[i].id %>">Edit</a></td>-->
 
              <!-- <td><%= heroes.data[i].id %></td> -->
-
-                   <p><a href="/hero/skill">List Skill Hero</a></p>
+<!-- 
+                   <p><a href="/hero/skill">List Skill Hero</a></p> -->
